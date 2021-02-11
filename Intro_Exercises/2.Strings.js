@@ -7,7 +7,7 @@ const numberTwo = "2.30";
 // add those two numbers and show the result
 // you cannot touch line 1 neither line 2
 
-console.log(parseFloat(numberOne) + parseFloat(numberTwo));
+console.log(+numberOne + +numberTwo);
 
 // --------------------------------------
 
@@ -17,10 +17,8 @@ console.log(parseFloat(numberOne) + parseFloat(numberTwo));
 
 const anotherNumberOne = "1.10";
 const anotherNumberTwo = "2.30";
-
-const solution = parseFloat(anotherNumberOne) + parseFloat(anotherNumberTwo);
-
-console.log(solution.toFixed(2));
+const result = +anotherNumberOne + +anotherNumberTwo;
+console.log(result.toFixed(2));
 
 // --------------------------------------
 // Exercise 5 - Decimals and average
@@ -43,11 +41,7 @@ console.log(average.toFixed(5));
 const letters = "abc";
 // Get me the character "c"
 
-console.log(letters.search("c")); // gets the index then look up again (not efficient)
-
-console.log(letters.charAt(2));
-
-console.log(letters[2]);
+console.log(letters.charAt(2))
 
 // --------------------------------------
 // Exercise 7 - Replace
@@ -56,9 +50,8 @@ const fact = "You are learning javascript!";
 
 // capitalize the J in Javascript
 
-const capitalizedJSentence = fact.replace("j", "J");
 
-console.log(capitalizedJSentence);
+console.log(fact.replace("j", "J"));
 
 
 // --------------------------------------
