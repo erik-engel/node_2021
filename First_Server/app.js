@@ -1,43 +1,31 @@
-// Import package
-const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv/config');
-// Execute package
+const express = require("express");
 const app = express();
 
 
-// Middlewares
-// Functions that'll alwayes execute, when we hit a specific route
-// We can f.eks use some kind of authetication like 
-// app.use(auth);
+// Test Data
+
+const animals = [
+    {id : 1, name : "deer", vegetarian : true, diet : "plants", danger : "only towards plants"}, 
+    {id : 2, name : "lion", vegetarian : false, diet : "meat", danger : "very dangerous"}, 
+    {id : 3, name : "shark", vegetarian : false, diet : "fish", danger : "only if you're a fish or maybe if you're under water"}];
 
 
+// ROUTES
 
-// Routes 
-app.get('/', (req,res) => {
-    res.send('We are on home');
+// Welcome page
+app.get("/", (req, res) => {
+    res.send("<h1>Welcome to this animal page</h1>");
 });
 
-app.get('/posts', (req,res) => {
-    res.send('We are on posts');
+// Get all animals
+app.get("/animals", (req, res) => {
+    res.send(animals)
 });
 
-app.get('/welcome', (req, res) => {
-    res.send('<h1>Welcome<h1>')
-})
+// Get animal by id
+app.get("/animals/:id", (req, res) => {
+    res.send(animals[req.params.id -1]);
+});
 
-app.get('/me', (req, res) => {
-    res.send({name : 'Erik', age : 25, course : 'node.js'})
-})
-
-// Connect to DB
-mongoose.connect(
-    process.env.DB_CONNECTION, 
-    { useUnifiedTopology: true }, 
-    { useNewUrlParser: true },
-    () => console.log('connected to DB!')
-);
-
-
-// How do we start listening to the server?
+// LISTEN
 app.listen(8080);
