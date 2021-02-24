@@ -1,0 +1,66 @@
+const express = require("express");
+const date = require('date-and-time');
+const app = express();
+
+// Date
+
+function time() {
+    let datetime = new Date();
+    return datetime
+}
+
+setInterval(time, 1000);
+
+// Time
+/*app.use("/time", (req,res) => {
+    let currentTime = (time().getHours() + ":" + time().getMinutes() + ":" + time().getSeconds());
+});
+*/
+//let currentTime = (datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds());
+
+//setInterval(currentTime, 1000);
+
+// Day
+
+/*let days = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
+let currentDay = days[datetime.getDay()];
+let currentDate = datetime.getDate();*/
+let days = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
+let currentDay = days[time().getDay()];
+let currentDate = time().getDate();
+
+// Month
+
+/*let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "July", "August", "September", "Oktober", "November", "December"];
+let currentMonth = months[datetime.getMonth()];*/
+let months = ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "July", "August", "September", "Oktober", "November", "December"];
+let currentMonth = months[time().getMonth()];
+
+// MIDDLEWARES
+
+
+// ROUTES
+
+// Welcome
+app.get("/", (req, res) => {
+    res.send("<h1>Velkommen til kalendersiden!<h1>");
+});
+
+// Current time
+app.get("/time", (req, res) => {
+    let currentTime = (time().getHours() + ":" + time().getMinutes() + ":" + time().getSeconds());
+    res.send("<h1>Klokken er: " + currentTime + "<h1>")
+});
+
+// Current day
+app.get("/day", (req, res) => {
+    res.send("<h1>Det er " + currentDay + " den " + currentDate + ".<h1>")
+});
+
+// Current month
+app.get("/month", (req, res) => {
+    res.send("<h1>Vi er i " + currentMonth + " måned<h1>")
+});
+
+// LISTEN
+app.listen(8090);
