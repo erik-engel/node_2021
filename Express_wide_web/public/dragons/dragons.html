@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dragons.css" />
+    <title>Dragon cave</title>
+  </head>
+  <body>
+    <h1>Here be dragons</h1>
+    <button><a href="/">Take me back</a></button>
+
+    <p id="is-puff-here">Puff was here</p>
+
+    <div id="grid-container">
+      <div id="1">1</div>
+      <div id="2">2</div>
+      <div id="3">3</div>
+      <div id="4">4</div>
+      <div id="5">5</div>
+      <div id="6">6</div>
+      <div id="7">7</div>
+      <div id="8">8</div>
+      <div id="9">9</div>
+    </div>
+    <!-- <img
+      id="dragon-img"
+      src="https://cdn.pixabay.com/photo/2014/01/05/01/19/dragon-238931_960_720.jpg"
+      alt="Dragooonnn"
+    /> -->
+  </body>
+
+  <!-- Jquery -> lets us manipulate the DOM through convenient methods 
+      DOM API also allows us to do that 
+  -->
+
+  <!-- Ajax -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../scripts/dragons.js"></script>
+  <script>
+    const dragonImage = `<img id="dragon-img" src="https://cdn.pixabay.com/photo/2014/01/05/01/19/dragon-238931_960_720.jpg"/>`;
+
+    $("#1").append(dragonImage)
+
+    $(document).on('click', (event) => {
+      $("#dragon-img").remove()
+    });
+    $('img').click(function () {
+      console.log('hello dabber clicker');
+    });
+
+    setTimeout(() => {
+      $('#is-puff-here').text('Puff bailed');
+    }, 3000);
+
+    red = true;
+    setInterval(() => {
+      if (red) {
+        $('#2').css('background-color', 'white');
+      } else {
+        $('#2').css('background-color', 'red');
+      }
+      red = !red;
+    }, 3000);
+  </script>
+</html>

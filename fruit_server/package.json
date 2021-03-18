@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test" : "cross-env PORT=3000 nodemon app.js"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,14 @@
+#grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+}
+
+#dragon-img {
+    width: 200px;
+}
+
+#grid-container div {
+    min-height: 200px;
+    min-width: 400px;
+}
