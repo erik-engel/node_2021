@@ -37,7 +37,7 @@ $(document).ready(function () {
           country: country.value,
         },
         function (data, status) {
-          location.replace("/beer.html")
+          location.replace("/")
           console.log('Data: ' + JSON.stringify(data) + '\nStatus: ' + status);
           
         }
