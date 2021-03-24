@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Documentation</title>
+  </head>
+  <body class="h-screen">
+    <div class="flex flex-col h-screen justify-between">
+      <!--header-->
+      <div id="navbar"></div>
+      <!-- hero -->
+      <div
+        class="bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-600 md:flex justify-between text-indigo-100 font-mono h-full"
+      >
+        <!-- sidebar -->
+        <div id="sidebar"></div>
+        <div class=" md:font-bold w-full flex place-content-center items-center">
+          <p>Comming back soon .. Currently under construction</p>
+        </div>
+      </div>
+
+      <!-- footer ===========================-->
+      <div id="footer"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('#sidebar').load('/elements/sidebar.html');
+        $('#navbar').load('/elements/navbar.html');
+        $('#footer').load('/elements/footer.html');
+      });
+    </script>
+  </body>
+</html>

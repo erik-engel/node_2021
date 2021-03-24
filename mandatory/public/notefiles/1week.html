@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Documentation</title>
+  </head>
+  <body class="h-screen">
+    <!--header-->
+    <div id="navbar"></div>
+
+    <!-- hero -->
+    <div
+      class="bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-600 md:flex justify-between text-indigo-100 font-mono"
+    >
+      <!-- sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- middle  -->
+      
+      <div class="py-8 p-10 md:w-2/3 mb-10 md:mb-0">
+        <h1 class="text-2xl">First of all. What is node?</h1>
+        <br />
+        <p>
+          Simply put Node allows developers to write JavaScript code that will
+          run directly in a computer process itself, and not in a browser.
+          Therefore we can use node for writing server-side applications.
+        </p>
+        <br />
+        <p>
+          Installing note: As i am using Linux on my personal computer, i’ll
+          tell how to install nodeJS on an ubuntu OS. Firstly I open up the
+          terminal to check whether or not node is already installed. To do so i
+          would write:
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code> node -v or node --version </code>
+        </div>
+        <br />
+        <p>
+          If the return msg is something like v15.8.0, node is already
+          installed. If not node we will install node via the snap store
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code>sudo snap install node --classic </code>
+        </div>
+        <br />
+        <p>
+          Now I can check for the version once again, and the turnout should
+          tell med which node version I’ve got installed at the moment Now that
+          node is installed we can make a simple test.js file in vscode and run
+          it with node. First i create the test.js which has some simple code in
+          it for instance: console.log(“First file run with Node.js”) now in my
+          terminal i’ll cd to my project folder and to check if i’m in the right
+          place i could type ls and the terminal would return the files from the
+          current folder. For this example, it would return “test.js” Now i can
+          run my first file by typing
+        </p>
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code>node test.js </code>
+        </div>
+        <br />
+        <h1 class="text-2xl">Basic Javascript</h1>
+        <br />
+        <p>
+          For a long time “Var” declarations was the way to go. But there are
+          some issues associated with “Var”. These issues are concerning “Var”s
+          scope. Var declarations are globally scoped or function scoped.
+          Therefore if we do something like this:
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code
+            >var greet = “Hi there” <br />
+            var x = 4 if (x > 3) {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp; var greet = “Hi there, but different”
+            <br />
+            } <br />
+            console.log(greet) // output will be “Hi there, but different”
+          </code>
+        </div>
+        <br />
+        <p>
+          as we can see the value will remain as the value declared withing the
+          if-statement
+        </p>
+        <br />
+        <p>
+          "let" on the other hand is, as with "const", block-scoped. This means,
+          that if you change “var” in the code from last example, to “let” the
+          output will be “Hi there”. This is because it’s block scoped, and the
+          code will treat the two “let greet” variables as being two different
+          variables, one initialized within the blocks of the if statement and
+          one initialized in the global scope.
+        </p>
+        <br />
+        <p>
+          Variables that are declared with “const” will, as the name almost
+          states, remain constant. “const” can therefore not be updated, nor
+          redeclared. Although if you declare a const object we can change it
+          with following example:
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code>
+            const greeting = { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp; msg: “Hello there”, <br />
+            &nbsp;&nbsp;&nbsp;&nbsp; x : 4 <br />} <br />
+            greeting.msg = “Hello there, but different”
+          </code>
+        </div>
+        <br />
+        <p>
+          “const” must be initialized during declaration. “var” and “let” don't
+          have to be. Another difference between var and (let and const) is
+          their behaviour when hoisted. Hoisting is JavaScript’s default
+          behaviour of moving all declarations to the top of the current scope
+          (to the top of the current script or the current function). When
+          declared with “let” and “const” the variables are hoisted to the top
+          of the block, but NOT initialized. With “var” the variable is hoisted
+          to the top of the scope, and initialized with value of undefined.
+        </p>
+        <br />
+      </div>
+
+      <!-- right side  -->
+      <div class="hidden lg:w-1/3 px-4 py-10 lg:flex flex-col justify-between">
+        <div>
+          <img
+            class="transform scale-100 rounded-lg"
+            src="https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_960_720.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- footer ===========================-->
+    <div id="footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('#sidebar').load('/elements/sidebar.html');
+        $('#navbar').load('/elements/navbar.html');
+        $('#footer').load('/elements/footer.html');
+      });
+    </script>
+  </body>
+</html>

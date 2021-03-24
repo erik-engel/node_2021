@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Startside</title>
+  </head>
+  <body>
+    <!--header-->
+    <div id="navbar"></div>
+
+    <!-- hero -->
+    <div
+      class="md:flex justify-between py-40 px-10 bg-indigo-600 text-indigo-100"
+    >
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h2 class="text-2xl md:text-4xl lg:text-6xl text-white mb-6">
+          Welcome to Node City
+        </h2>
+        <p class="mb-6">
+          Here you can find documentation regarding NodeJS, and add a beer or
+          two to the beer API
+        </p>
+
+        <form class="mb-6">
+          <div>
+            <label
+              for="bname"
+              class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 rounded mr-2"
+              >Name:</label
+            >
+            <input
+              type="text"
+              id="bname"
+              name="bname"
+              class="rounded py-3 px-4 text-gray-800 focus:bg-indigo-100 mb-6"
+            />
+          </div>
+          <div>
+            <label
+              for="brand"
+              class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 rounded mr-2"
+              >Brand:</label
+            >
+            <input
+              type="text"
+              id="brand"
+              name="brand"
+              class="rounded py-3 px-4 text-gray-800 focus:bg-indigo-100 mb-6"
+            />
+          </div>
+          <div>
+            <label
+              for="country"
+              class="inline-block py-3 px-6 text-lg bg-gray-400 text-gray-800 rounded mr-2"
+              >Country:</label
+            >
+            <input
+              type="text"
+              id="country"
+              name="country"
+              class="rounded py-3 px-4 text-gray-800 focus:bg-indigo-100"
+            />
+          </div>
+          <br />
+          <!-- <button class="bg-red-300 hover:bg-red-400 text-red-800 rounded px-2" id="send">Add Beer!</button> -->
+          <input
+            type="button"
+            id="send"
+            value="Add Beer!"
+            class="bg-red-300 hover:bg-blue-400 text-red-800 rounded px-2"
+          />
+        </form>
+
+        <!-- <button id="send">Post here</button> -->
+
+        <table class="mb-6 justify-between">
+          <tr
+            class="py-3 px-6 text-lg bg-yellow-800 text-black rounded justify-between"
+          >
+            <th class="mr-8">Name</th>
+            <th>Brand</th>
+            <th>Country</th>
+          </tr>
+          <tbody
+            class="py-3 px-6 text-lg bg-yellow-600 rounded text-black"
+            id="beers"
+          ></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- footer -->
+
+    <div id="footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./thescript.js"></script>
+    <script>
+      $(function () {
+        $('#sidebar').load('/elements/sidebar.html');
+        $('#navbar').load('/elements/navbar.html');
+        $('#footer').load('/elements/footer.html');
+      });
+    </script>
+  </body>
+</html>

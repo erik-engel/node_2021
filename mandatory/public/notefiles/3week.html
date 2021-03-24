@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Documentation</title>
+  </head>
+  <body class="h-screen">
+    <!--header-->
+    <div id="navbar"></div>
+
+    <!-- hero -->
+    <div
+      class="bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-600 md:flex justify-between text-indigo-100 font-mono"
+    >
+      <!-- sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- middle  -->
+
+      <div class="py-8 p-10 md:w-2/3 mb-10 md:mb-0">
+        <h1 class="text-2xl">NPM</h1>
+        <br />
+        <h1 class="text-xl">Express</h1>
+        <br />
+        <p>
+          Express is a framework that's running within node.
+          We use it for building webapplications quickly.
+        </p>
+        <p>
+          Express is installed through the npm (node package manager) let's see
+          how:
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code>
+            {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp; "dependencies": { <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cross-env":
+            "^7.0.3", <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "express":
+            "^4.17.1" <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+            }
+          </code>
+        </div>
+
+        <br />
+        <p>
+          The above example is how you should configure your package.json. Now
+          you just type npm install in your terminal, of course in the right
+          location. Now express will be install and you're ready to use it.
+        </p>
+        <br />
+        <p>
+          Another way to install express would be by typing "npm install
+          express" in the terminal.
+        </p>
+        <br />
+        <h1 class="text-xl">Nodemon</h1>
+        <br />
+        <p>
+          Nodemon is a great tool we can use for developing webapps. Nodemon
+          will restart the application whenever a change is made
+        </p>
+        <br />
+        <p>
+          We can install nodemon the same way we would with express. Yet here
+          comes a different way to install it, which you propaply better like in
+          the long run.
+        </p>
+        <br />
+        <p>This will install nodemon globally</p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code> npm install -g nodemon </code>
+        </div>
+        <br />
+        <p>
+          Now, insted of the usual way to run a node file, we can type the
+          following:
+        </p>
+        <br />
+        <div class="bg-gray-500 rounded py-5 px-5">
+          <code> npm install -g nodemon </code>
+        </div>
+        <br />
+        <p>
+          Now the application will restart whenever a change is made to the
+          files.
+        </p>
+        <br>
+        <p>With express and nodemon both installed, we are now ready to create an API.</p>
+      </div>
+
+      <div class="hidden lg:w-1/3 px-4 py-10 lg:flex flex-col justify-between">
+        <div>
+          <img
+            class="transform scale-100 rounded-lg"
+            src="https://cdn.pixabay.com/photo/2015/05/26/23/52/technology-785742_960_720.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- footer ===========================-->
+    <div id="footer"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $('#sidebar').load('/elements/sidebar.html');
+        $('#navbar').load('/elements/navbar.html');
+        $('#footer').load('/elements/footer.html');
+      });
+    </script>
+  </body>
+</html>
