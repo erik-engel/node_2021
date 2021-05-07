@@ -1,0 +1,11 @@
+C
+    insert
+    eks: db.actors.insert({ name : "Danny Devito" })   
+R
+    find
+    eks: db.actors.find()
+U
+    
+D   
+    deleteOne, deleteMany
+    eks: db.actors.deleteOne({id: "old man"})

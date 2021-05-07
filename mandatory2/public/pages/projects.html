@@ -1,0 +1,183 @@
+<!-- hero -->
+<div class="lg:flex justify-center text-black font-mono">
+  <!-- if small screen  -->
+  <div class="lg:hidden">
+    <div class="px-10 pt-8 pb-3 flex justify-between">
+      <a
+        href="/cv"
+        class="bg-blue-800 hover:bg-gray-700 hover:text-green-300 block px-3 py-2 rounded-md text-base font-medium"
+        >Previous</a
+      >
+
+      <a
+        href="/repos"
+        class="bg-blue-800 hover:bg-gray-700 hover:text-green-300 block px-3 py-2 rounded-md text-base font-medium"
+        >Next</a
+      >
+    </div>
+  </div>
+  <div class="md:w-full flex p-10 justify-center">
+    <!-- middle  -->
+    <div class="w-full md:w-3/5 lg:w-2/5 flex flex-col">
+      <!-- left  -->
+      <h1 class="text-4xl font-bold text-center">Projects</h1>
+      <div class="md:w-full mb-10 md:mb-0 h-5/6">
+        <div class="p-10">
+          <p>
+            This page is for some of my previous, current and future projects. I
+            have handpicked some of the projects I think are most exciting and
+            you can read about my workflow and my considerations for each
+            project.
+          </p>
+          <br />
+          <p>More projects will of course be added in the future.</p>
+          <br />
+          <br />
+          <h2 class="text-xl font-bold">Workout-app</h2>
+          <br />
+          <p>
+            As a mandatory assignment in iOS i made this fullstack app in swift.
+          </p>
+          <br />
+          <iframe
+            class="w-full"
+            height="315"
+            id="video"
+            src="https://youtube.com/embed/-uRGmuqBQq4"
+            allowfullscreen
+          >
+          </iframe>
+          <br />
+          <br />
+          <h2 class="text-xl font-bold">Webscraber for work schedule</h2>
+          <br />
+          <p>I recently build a webscraber for my work schedule</p>
+          <p>
+            When running the project. All the shifts in my work calendar, will
+            be processed and inserted in my google calendar.
+          </p>
+          <br />
+          <iframe
+            class="w-full"
+            height="315"
+            id="video"
+            src="https://www.youtube.com/embed/LNBjNGutDGU"
+            allowfullscreen
+          >
+          </iframe>
+
+          <h2 class="text-xl font-bold pt-8">Storm Fysik Aps</h2>
+          <a href="https://www.stormfysik.dk" target="_blank"
+            ><h2 id="project1" class="font-bold text-blue-900">
+              https://www.stormfysik.dk/
+            </h2></a
+          >
+
+          <div id="text1">
+            <br />
+
+            <p>
+              The first professional project I made was a webpage. The customer
+              wanted a simple web application, for massage-booking.
+              <span id="dots1">..</span>
+            </p>
+
+            <br />
+            <div id="more1">
+              <p>
+                When I started on the project, I had only worked with Java.
+                Therefore Java Spring was the go-to framework. <br />
+                Firstly I wanted to get a hold of all the logic, and started
+                working on the backend stuff. I made the model classes for the
+                booking logic and from here I could start working on the
+                repository, service and controller classes. I have used
+                hibernate for interaction with the database. I created the
+                database using GearHost. As I have used hibernate, the
+                repository is pretty straight forward and with the help of JPA
+                it resulted in very little code. The service classes were basic
+                as well. Looking back, I should have probably put some of the
+                logic from the controller into the service class. The basics of
+                the controller class was quickly implemented as well and could
+                start with some of my frontend elements.
+              </p>
+              <br />
+              <p>
+                When I created the project I had no previous experience with
+                frontend development. The static text and pages were made with
+                the help of the bootstrap css framework. I ran into a lot of
+                issues when I started on the actual booking system. For this I
+                used FullCalendar.io, a full size JavaScript calendar. Most of
+                the issues I had were in JS, as I had no prior experience in JS
+                at all. I struggled a lot, but eventually I got everything to
+                work. I used jQuery Ajax, for making calls to the controller,
+                for saving and retrieving bookings from the database to the
+                actual calendar.
+              </p>
+              <br />
+              <p>
+                The customer also wanted an admin-page for him to make available
+                appointments to the calendar. I made a calendar similar to the
+                booking-calendar where it is possible to create, delete, and
+                watch appointments. I used Spring Security to make the
+                admin-page, so that it can be accessed only with a username and
+                password, encrypted and stored in the database.
+              </p>
+              <br />
+              <p>
+                When I was done with the actual webpage I thought it would be
+                easy and that I could deploy it within hours. That was not the
+                case. The webpage is hosted from an EC2 instance on AWS. The
+                webpage was quickly online, but only from the IP-address. From
+                the web-hotels DNS-configurations I could point the domain-name
+                to the IP.
+              </p>
+              <br />
+              <p>
+                Now the webpage was online on the right domain... followed by
+                :8080, and not secure. It took me a couple of days to learn how
+                to use certbot and to get the SSL certificate and set up the
+                properties correctly. Eventually I got everything configured
+                correctly, and the webpage was, and still is up and running on
+                port 443 with a LetsEncrypt Certificate. I have not shared the
+                source code for this project, as it is private. I am very open
+                to showing it and answering questions on request.
+              </p>
+              <br />
+            </div>
+          </div>
+          <div class="space-y-" id="btn1">Read More</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- right  -->
+</div>
+
+<!-- footer ===========================-->
+<div id="footer"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(function () {
+    $('#more1').hide();
+
+    let isshow;
+    $('#btn1').click(function () {
+      console.log('hello');
+      if (!isshow) {
+        //$('#footer').remove();
+        $('#more1').show();
+        $('#dots1').hide();
+        isshow = true;
+        $('#btn1').html('Read Less');
+        //$('#footer').append('/elements/footer.html');
+      } else if (isshow) {
+        $('#dots1').show();
+        $('#more1').hide();
+        isshow = false;
+        $('#btn1').html('Read More');
+        //$('#footer').load('/elements/footer.html');
+      }
+    });
+  });
+</script>

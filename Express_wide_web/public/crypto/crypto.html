@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Real-time Crypto Prices</h1>
+
+    <div>
+      <h3>Bitcoin</h3>
+      <br />
+      <p id="bitcoin-price"></p>
+    </div>
+
+    <div>
+      <h3>Etherium</h3>
+      <p id="etherium-price"></p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      fetch('https://api.coinlore.net/api/ticker/?id=90')
+        .then((response) => response.json())
+
+        .then((result) => {
+          const bit = document.getElementById('bitcoin-price');
+          bit.innerText = '$' + result[0].price_usd;
+        });
+      // $(document).ready(function () {
+      //   getCoin();
+
+      //   function getCoin() {
+      //     $.get('https://api.coinlore.net/api/ticker/?id=90', (data) => {
+      //       $('#bitcoin-price').append('$' + data[0].price_usd);
+      //       console.log(data);
+      //     });
+
+      //     $.get('https://api.coinlore.net/api/ticker/?id=80', (data) => {
+      //       const ethParagraph = document.getElementById('etherium-price');
+      //       ethParagraph.innerText = '$' + data[0].price_usd;
+      //     });
+      //   }
+      // });
+    </script>
+  </body>
+</html>

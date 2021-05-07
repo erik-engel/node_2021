@@ -1,0 +1,130 @@
+<!-- hero -->
+<div class="lg:flex justify-between text-black font-mono">
+  <!-- middle  -->
+  <div class="md:w-full flex p-10 justify-center pb-72">
+    <div class="md:w-3/5 lg:w-2/5 flex flex-col space-y-12 lg:items-center">
+      <h1 class="text-4xl font-bold text-center">Contact</h1>
+      <!-- <div class="w-full">
+            <p class="">
+              If you want to get in touch. Please contact me with the
+              information bellow or fill out the form.
+            </p>
+          </div> -->
+
+      <div class="lg:hidden">
+        <div class="py-4">
+          <p class="whitespace-nowrap font-extrabold">Phone:&nbsp;&nbsp;</p>
+          <p>+45 27 57 53 23</p>
+        </div>
+
+        <div class="py-4">
+          <p class="whitespace-nowrap font-extrabold">E-mail:&nbsp;</p>
+          <p>contact@erikengel.dk</p>
+        </div>
+
+        <div class="py-4">
+          <p class="whitespace-nowrap font-extrabold">LinkedIn:&nbsp;</p>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/erik-engel-a781b71a6/"
+            >My Profile</a
+          >
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:space-x-16 justify-center w-full">
+        <div class="w-1/2 flex flex-col space-y-4">
+          <div class="flex">
+            <p class="whitespace-nowrap font-extrabold">Phone:&nbsp;&nbsp;</p>
+            <!-- <p>+45 27 57 53 23</p> -->
+          </div>
+
+          <div class="flex">
+            <p class="whitespace-nowrap font-extrabold">E-mail:&nbsp;</p>
+            <!-- <p>contact@erikengel.dk</p> -->
+          </div>
+
+          <div class="flex">
+            <p class="whitespace-nowrap font-extrabold">LinkedIn:&nbsp;</p>
+            <!-- <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/erik-engel-a781b71a6/"
+                  >My Profile</a
+                > -->
+          </div>
+        </div>
+        <div class="w-1/2 flex flex-col space-y-4">
+          <div class="flex">
+            <!-- <p class="whitespace-nowrap">Phone:&nbsp;&nbsp;</p> -->
+            <p>+45 27 57 53 23</p>
+          </div>
+
+          <div class="flex">
+            <!-- <p class="whitespace-nowrap">E-mail:&nbsp;</p> -->
+            <p>contact@erikengel.dk</p>
+          </div>
+
+          <div class="flex">
+            <!-- <p class="whitespace-nowrap">LinkedIn:&nbsp;</p> -->
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/erik-engel-a781b71a6/"
+              >My Profile</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <form
+        class="flex flex-col w-full"
+        id="contact_form"
+        method="POST"
+        action="/api/contact"
+      >
+        <label>NAME</label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          type="text"
+          name="name"
+          placeholder="name"
+        />
+
+        <label>E-MAIL</label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          type="email"
+          name="email"
+          placeholder="email"
+        />
+
+        <label>SUBJECT</label>
+
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          type="subject"
+          name="subject"
+          placeholder="subject"
+        />
+
+        <label>MESSAGE</label>
+        <textarea
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          type="text"
+          name="text"
+          placeholder="text"
+        ></textarea>
+        <div class="md:flex md:items-center">
+          <div class="md:w-1/3">
+            <button
+              class="shadow bg-blue-900 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              type="submit"
+              value="submit"
+            >
+              Send
+            </button>
+          </div>
+          <div class="md:w-2/3"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
